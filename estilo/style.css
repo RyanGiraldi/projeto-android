@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
+
+@font-face {
+    font-family: android;
+    src: url('../fontes/idroid.otf') format(opentype);
+    font-weight: normal;
+}
+
+:root { /*isso serve para salvar cores e fontes para ser mais fácil de usar*/
+    --cor0:#c5ebd6;
+    --cor1: #83eiad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#002711;
+
+    --fonte-padrao: Arial, Verdana, Helvetica. sans-serif;
+    --fonte-android: 'android', cursive;
+    --fonte-destaque: 'Bebas Neue', cursive;
+}
+
+* { /*isso tira a margin e padding de todos os conteudos do site*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body { /*isso coloca a cor de fundo do site e a fonte de todos a padrão*/
+    background-color: beige;
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\00a0\1F517';
+}
+
+
+header { /*isso aqui é a parte de cima do header*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*degrade do menu de cima*/
+    min-height: 150px;
+    text-align: center; /*centraliza os textos do header*/
+    padding-top: 40px; /*isso coloca uma distancia do h1 e p, para eles não  ficarem muito grudados*/
+}
+
+header > h1 {
+    color: white; /*cor do h1 do header*/
+    font-weight: normal;
+    font-size: 3em; /*tamanho do h1,o padrão é 1em*/
+    font-family:var(--fonte-destaque); /*fonte do h1*/
+    margin-bottom: 20px; /*isso da uma distancia do h1 para o parágrafo*/
+    text-shadow: 2px 2px 70px rgba(0, 0, 0, 0.5); /*sombra do h1 para dar efeito de profundidade*/
+}
+
+
+header > p { /*configs do p do header*/
+    color: white; /*cor do texto*/
+    font-size: 1.2em; 
+    font-family: var(--fonte-padrao);
+    max-width: 600px; /**/
+    margin: auto; /*centraliza o texto do P*/
+    padding-right: 10px; /*coloca uma distancia para direitaa*/
+    padding-left: 10px; /*coloca uma distancia para esquerda*/
+    text-shadow: 4px 2px 12px rgba(0, 0, 0, 0.308); /*sombra do parágrafo para efeito de profundidade*/
+
+}
+
+nav { /*LINK (HOME/NOTICIAS/CURIOSIDADES/FALE CONOSCO*/
+    background-color: var(--cor5); /*COR*/
+    padding: 10px; /*isso não deixa mt grudado o home e os demais*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.5) ; /*efeito de profundidade (Sombras)*/
+}
+
+nav > a {
+    color: var(--cor2); /*cor do a*/
+    padding: 10px; /*separa um pouco do HOME e os demais, para não ficarem mt grudados, EXEMPLO: Sem= Home Noticias Curiosidades Fale Conosco, Com = Home     Noticias      Curiosidades      Fale Conosco      */
+    text-decoration: none; /*tirando o underline de baixo do texto*/
+    font-weight: bold; /*negrito*/
+    border-radius: 5px;/*isso arredonda o efeito de quando vc passa o mouse em cima*/
+    transition-duration: 0.5s; /*isso faz atrás o efeito de quando passa o mouse em cima*/
+}
+
+nav a:hover {
+    background-color: var(--cor3); /*cor de fundo quando vc passa o mouse em cima do menu*/
+    color: var(--cor5); /*cor do link quando vc passa o mouse em cima do menu*/
+    
+}
+
+main {
+    background-color: white;
+    min-width: 300px; /*quando chegar a 1000px ele para de crescer*/
+    padding: 20px;
+    margin: auto; /*deixa a o conteúdo no meio*/
+    max-width: 1000px; /*largura minima para se adaptar*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459);
+    border-radius: 0px 0px 10px 10px;
+}
+
+main h1 {
+    color:var(--cor4);
+    font-weight: normal;
+    font-size: 1.8em;
+    font-family: var(--fonte-android);   
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color:var(--cor5);
+    font-weight: normal;
+    font-size: 1.4em;
+    background-image: linear-gradient(to right, var(--cor3), transparent); /*degrade no h2*/
+    text-indent: 6px; /*espaço do começo  do texto, EXEMPLO= Sem=Oi, tudo bem?  Com=   Oi, tudo bem?*/
+    border-radius: 5px;
+}
+
+
+main p {
+    margin: 15px 0px; /*faz o texto ter uma distancia do h1/h2 em cima 15, direita 0, baixo 15, esquerda 0*/
+    text-align: justify; /*alinha o texto*/
+    text-indent: 30px; /*Faz o parágrafo ter um espaço no começo, tipo >     oiii, tudo bem*/
+    font-size: 1em; /*1em geralmente é o pdrão*/  
+    line-height: 1.7em; /*Isso faz o texto ter uma distancia um do outro, meio que pular mais linhas para escrever*/
+}
+
+main strong {
+    color:var(--cor5); /*cor nos strogns*/
+    font-weight: bold; /*fonte em negrito*/
+}
+
+main a {
+    text-decoration: none; /*tira o underline do link*/
+    font-weight: bold;
+    color: var(--cor5);
+    padding: 2px 4px;  /*arrumando o background do strong, o espaço que vai ocupar*/
+}
+
+main a:hover {
+    text-decoration: underline; /*coloca o underline quando vc passa o mouse em cima*/
+    color: var(--cor2);
+}
+    
+   
+main img {
+    width: 100%; /*Deixa a imagem do tamanho do retangulo do main*/
+}
+
+main img.pequena  {
+    max-width: 350px; /*ajustando o tamanho da img, pq ela ficou mt grande e não tem uma img pequena dela!*/
+    display: block; /*isso muda o display da img para o "magin:auto" funcionar e centralizar a foto*/
+    margin: auto; /*deixa a img no centro*/
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -30px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5% ;
+    left: 5% ;
+    width: 90% ;
+    height: 90% ;
+}
+
+aside { /*coloca fundo no aside/quer aprender mais*/
+    background-color: var(--cor3); 
+    padding: 10px;
+    border-radius: 13px;
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.404);
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul {
+    font-size: 1.2em;
+    list-style-type: '\2714\00a0';
+    list-style-position: inside; /*coloca os pontinhos do ul para dentro da caixa*/
+    columns: 2; /*dividi a lista em colunas de 2*/
+}
+
+footer {
+    margin-top: 30px;
+    color: white;
+    background-color: var(--cor5);
+    text-align: center;
+    font-size: 0.8em;
+    padding: 4px;
+}
+
+footer > p > a {
+    color: white;
+}
+
+footer > a > p {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor2);
+}
